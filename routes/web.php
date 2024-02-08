@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Inertia\Inertia;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +15,19 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return Inertia::render('Landing');
 });
+
+Route::get('/dashboard', function () {
+    return Inertia::render('Dashboard');
+});
+
+
+Route::get('/login', function () {
+    return Inertia::render('Login');
+});
+
+Route::get('/table', function () {
+    return Inertia::render('Table');
+});
+
