@@ -34,7 +34,9 @@ onBeforeMount(() => {
 
     isActiveMenu.value = activeItem === itemKey.value || activeItem ? activeItem.startsWith(itemKey.value + '-') : false;
 
-    if (usePage().url === props.item.to) {
+    const currentRoute = usePage().url.split('?')[0];
+
+    if (currentRoute === props.item.to) {
         setActiveMenuItem(itemKey.value);
     }
 });
@@ -67,7 +69,8 @@ const itemClick = (event, item) => {
 };
 
 const checkActiveRoute = (item) => {
-    return usePage().url === item.to;
+    const currentRoute = usePage().url.split('?')[0];
+    return currentRoute === item.to;
 };
 </script>
 
