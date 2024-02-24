@@ -1,7 +1,7 @@
 <script setup>
 import { ref, computed, onMounted, onBeforeUnmount } from 'vue';
 import { useLayout } from '@/sakai-vue-master/layout/composables/layout';
-import NavLink from "@/Components/NavLink.vue";
+import { Link } from '@inertiajs/vue3'
 
 const { layoutConfig, onMenuToggle } = useLayout();
 
@@ -60,10 +60,10 @@ const isOutsideClicked = (event) => {
 
 <template>
     <div class="layout-topbar">
-        <NavLink href="/" class="layout-topbar-logo">
+        <Link href="/" class="layout-topbar-logo">
             <img :src="logoUrl" alt="logo" />
             <span>SAKAI</span>
-        </NavLink>
+        </Link>
 
         <button class="p-link layout-menu-button layout-topbar-button" @click="onMenuToggle()">
             <i class="pi pi-bars"></i>
